@@ -1,4 +1,11 @@
 import type { MetaFunction } from "@remix-run/node";
+import { CallToAction } from "~/components/CallToAction";
+import { Faqs } from "~/components/Faqs";
+import { Hero } from "~/components/Hero";
+import { Pricing } from "~/components/Pricing";
+import { PrimaryFeatures } from "~/components/PrimaryFeatures";
+import { SecondaryFeatures } from "~/components/SecondaryFeatures";
+import { StartNow } from "~/components/StartNow";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,32 +17,16 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1 className="bg-indigo-500">Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+      <main>
+        <Hero />
+        <PrimaryFeatures />
+        <SecondaryFeatures />
+        <CallToAction />
+        {/* Testimonials */}
+        <Pricing />
+        <StartNow />
+        <Faqs />
+      </main>
     </div>
   );
 }
