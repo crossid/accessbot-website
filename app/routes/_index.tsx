@@ -6,6 +6,7 @@ import { Pricing } from '~/components/Pricing'
 import { PrimaryFeatures } from '~/components/PrimaryFeatures'
 import { SecondaryFeatures } from '~/components/SecondaryFeatures'
 import { StartNow } from '~/components/StartNow'
+import { DESCRIPTION, TITLE } from '~/constants'
 import Sendgrid from '~/lib/sendgrid.server'
 
 type ActionData = {
@@ -65,7 +66,7 @@ export const action: ActionFunction = async ({ request }) => {
 }
 
 export const meta: MetaFunction = () => {
-  return [{ title: 'New Remix App' }, { name: 'description', content: 'Welcome to Remix!' }]
+  return [{ title: TITLE }, { name: 'description', content: DESCRIPTION }]
 }
 
 export default function Index() {
