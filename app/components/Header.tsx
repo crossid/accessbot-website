@@ -107,7 +107,7 @@ export function Header() {
                 Get started <span className="hidden lg:inline">today</span>
               </span>
             </Button> */}
-            <Button to="/contact" color="blue">
+            <Button to="#contact" color="blue">
               <span>Contact Us</span>
             </Button>
             <div className="-mr-1 md:hidden">
