@@ -1,15 +1,15 @@
-"use client";
+'use client'
 
-import { Tab } from "@headlessui/react";
-import clsx from "clsx";
-import { useEffect, useState } from "react";
+import { Tab } from '@headlessui/react'
+import clsx from 'clsx'
+import { useEffect, useState } from 'react'
 
-import { Container } from "~/components/Container";
-import backgroundImage from "~/images/background-features.jpg";
-import approvalImg from "~/images/screenshots/approval.png";
-import complianceImg from "~/images/screenshots/compliance.png";
-import provisioningImg from "~/images/screenshots/provisioning.png";
-import recommendationsImg from "~/images/screenshots/recommendations.png";
+import { Container } from '~/components/Container'
+import backgroundImage from '~/images/background-features.jpg'
+import approvalImg from '~/images/screenshots/approval.png'
+import complianceImg from '~/images/screenshots/compliance.png'
+import provisioningImg from '~/images/screenshots/provisioning.png'
+import recommendationsImg from '~/images/screenshots/recommendations.png'
 
 const features = [
   // {
@@ -19,50 +19,48 @@ const features = [
   //   image: screenshotPayroll,
   // },
   {
-    title: "Intelligent Access Recommendations",
+    title: 'Intelligent Access Recommendations',
     description:
-      "Our chatbot excels in delivering finely-tuned access recommendations. Whether a user specifies an intended action or seeks solutions for troubleshooting errors, the bot analyzes their input to propose the most appropriate access level, streamlining their workflow and enhancing productivity.",
+      'Our chatbot excels in delivering finely-tuned access recommendations. Whether a user specifies an intended action or seeks solutions for troubleshooting errors, the bot analyzes their input to propose the most appropriate access level, streamlining their workflow and enhancing productivity.',
     image: recommendationsImg,
   },
   {
-    title: "Seamless Approval Request Handling",
+    title: 'Seamless Approval Request Handling',
     description:
-      "Once a user requests access, our chatbot takes over the approval process. It automatically identifies and contacts the relevant data owner, expediting the approval chain and reducing the administrative burden on your IT team through familiar messaging platforms like Slack. This allows for quick and easy approvals, seamlessly integrating into the daily workflow of your team.",
+      'Once a user requests access, our chatbot takes over the approval process. It automatically identifies and contacts the relevant data owner, expediting the approval chain and reducing the administrative burden on your IT team through familiar messaging platforms like Slack. This allows for quick and easy approvals, seamlessly integrating into the daily workflow of your team.',
     image: approvalImg,
   },
   {
-    title: "Automated Access Provisioning",
+    title: 'Automated Access Provisioning',
     description:
-      "Upon receiving approval, our chatbot promptly provisions the requested access with the flexibility of temporal access. Integrated with directories like Azure and Okta, it ensures a smooth and immediate transition from approval to access, eliminating manual processing delays.",
+      'Upon receiving approval, our chatbot promptly provisions the requested access with the flexibility of temporal access. Integrated with directories like Azure and Okta, it ensures a smooth and immediate transition from approval to access, eliminating manual processing delays.',
     image: provisioningImg,
   },
   {
-    title: "Secure and Compliant Process",
+    title: 'Secure and Compliant Process',
     description:
       "Our chatbot intelligently aligns recommended access with your organization's policies and best practices, using AI that considers user access clusters based on role, title, and organizational unit. This, coupled with thorough auditing capabilities, ensures a secure and compliant access management process.",
     image: complianceImg,
   },
-];
+]
 
 export function PrimaryFeatures() {
-  const [tabOrientation, setTabOrientation] = useState<
-    "horizontal" | "vertical"
-  >("horizontal");
+  const [tabOrientation, setTabOrientation] = useState<'horizontal' | 'vertical'>('horizontal')
 
   useEffect(() => {
-    const lgMediaQuery = window.matchMedia("(min-width: 1024px)");
+    const lgMediaQuery = window.matchMedia('(min-width: 1024px)')
 
     function onMediaQueryChange({ matches }: { matches: boolean }) {
-      setTabOrientation(matches ? "vertical" : "horizontal");
+      setTabOrientation(matches ? 'vertical' : 'horizontal')
     }
 
-    onMediaQueryChange(lgMediaQuery);
-    lgMediaQuery.addEventListener("change", onMediaQueryChange);
+    onMediaQueryChange(lgMediaQuery)
+    lgMediaQuery.addEventListener('change', onMediaQueryChange)
 
     return () => {
-      lgMediaQuery.removeEventListener("change", onMediaQueryChange);
-    };
-  }, []);
+      lgMediaQuery.removeEventListener('change', onMediaQueryChange)
+    }
+  }, [])
 
   return (
     <section
@@ -83,15 +81,14 @@ export function PrimaryFeatures() {
             Key Features: Enhancing Access Management with AI Efficiency
           </h2>
           <p className="mt-6 text-lg tracking-tight text-indigo-100">
-            Discover how our AI chatbot revolutionizes application access
-            management, from request to approval, ensuring security and
-            compliance at every step.
+            Discover how our AI chatbot revolutionizes application access management, from request to approval, ensuring
+            security and compliance at every step.
           </p>
         </div>
         <Tab.Group
           as="div"
           className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
-          vertical={tabOrientation === "vertical"}
+          vertical={tabOrientation === 'vertical'}
         >
           {({ selectedIndex }) => (
             <>
@@ -101,19 +98,19 @@ export function PrimaryFeatures() {
                     <div
                       key={feature.title}
                       className={clsx(
-                        "group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6",
+                        'group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6',
                         selectedIndex === featureIndex
-                          ? "bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10"
-                          : "hover:bg-white/10 lg:hover:bg-white/5"
+                          ? 'bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10'
+                          : 'hover:bg-white/10 lg:hover:bg-white/5',
                       )}
                     >
                       <h3>
                         <Tab
                           className={clsx(
-                            "font-display text-lg ui-not-focus-visible:outline-none",
+                            'font-display ui-not-focus-visible:outline-none text-lg',
                             selectedIndex === featureIndex
-                              ? "text-indigo-600 lg:text-white"
-                              : "text-indigo-100 hover:text-white lg:text-white"
+                              ? 'text-indigo-600 lg:text-white'
+                              : 'text-indigo-100 hover:text-white lg:text-white',
                           )}
                         >
                           <span className="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none" />
@@ -122,10 +119,8 @@ export function PrimaryFeatures() {
                       </h3>
                       <p
                         className={clsx(
-                          "mt-2 hidden text-sm lg:block",
-                          selectedIndex === featureIndex
-                            ? "text-white"
-                            : "text-indigo-100 group-hover:text-white"
+                          'mt-2 hidden text-sm lg:block',
+                          selectedIndex === featureIndex ? 'text-white' : 'text-indigo-100 group-hover:text-white',
                         )}
                       >
                         {feature.description}
@@ -159,5 +154,5 @@ export function PrimaryFeatures() {
         </Tab.Group>
       </Container>
     </section>
-  );
+  )
 }

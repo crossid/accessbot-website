@@ -21,7 +21,18 @@ module.exports = {
   },
 
   // Base config
-  extends: ["eslint:recommended"],
+  extends: ["eslint:recommended", "plugin:prettier/recommended"],
+
+  rules: {
+    "prettier/prettier": [
+      "error",
+      {
+        semi: false,
+        singleQuote: true,
+        printWidth: 120,
+      },
+    ],
+  },
 
   overrides: [
     // React
@@ -33,6 +44,7 @@ module.exports = {
         "plugin:react/jsx-runtime",
         "plugin:react-hooks/recommended",
         "plugin:jsx-a11y/recommended",
+        "plugin:tailwindcss/recommended",
       ],
       settings: {
         react: {
@@ -65,11 +77,7 @@ module.exports = {
           },
         },
       },
-      extends: [
-        "plugin:@typescript-eslint/recommended",
-        "plugin:import/recommended",
-        "plugin:import/typescript",
-      ],
+      extends: ["plugin:@typescript-eslint/recommended", "plugin:import/recommended", "plugin:import/typescript"],
     },
 
     // Node
@@ -80,4 +88,4 @@ module.exports = {
       },
     },
   ],
-};
+}

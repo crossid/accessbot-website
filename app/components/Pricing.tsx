@@ -7,12 +7,7 @@ import { Container } from '~/components/Container'
 
 function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 281 40"
-      preserveAspectRatio="none"
-      {...props}
-    >
+    <svg aria-hidden="true" viewBox="0 0 281 40" preserveAspectRatio="none" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -22,32 +17,14 @@ function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function CheckIcon({
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<'svg'>) {
+function CheckIcon({ className, ...props }: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg
-      aria-hidden="true"
-      className={clsx(
-        'h-6 w-6 flex-none fill-current stroke-current',
-        className,
-      )}
-      {...props}
-    >
+    <svg aria-hidden="true" className={clsx('size-6 flex-none fill-current stroke-current', className)} {...props}>
       <path
         d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
         strokeWidth={0}
       />
-      <circle
-        cx={12}
-        cy={12}
-        r={8.25}
-        fill="none"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <circle cx={12} cy={12} r={8.25} fill="none" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -76,23 +53,13 @@ function Plan({
         featured ? 'order-first bg-indigo-600 py-8 lg:order-none' : 'lg:py-8',
       )}
     >
-      <h3 className="mt-5 font-display text-lg text-white">{name}</h3>
-      <p
-        className={clsx(
-          'mt-2 text-base',
-          featured ? 'text-white' : 'text-slate-400',
-        )}
-      >
-        {description}
-      </p>
-      <p className="order-first font-display text-5xl font-light tracking-tight text-white">
+      <h3 className="font-display mt-5 text-lg text-white">{name}</h3>
+      <p className={clsx('mt-2 text-base', featured ? 'text-white' : 'text-slate-400')}>{description}</p>
+      <p className="font-display order-first text-5xl font-light tracking-tight text-white">
         {yearly ? Number((price * 12 * 0.9).toFixed(1)) : price}$
       </p>
       <ul
-        className={clsx(
-          'order-last mt-10 flex flex-col gap-y-3 text-sm',
-          featured ? 'text-white' : 'text-slate-200',
-        )}
+        className={clsx('order-last mt-10 flex flex-col gap-y-3 text-sm', featured ? 'text-white' : 'text-slate-200')}
       >
         {features.map((feature) => (
           <li key={feature} className="flex">
@@ -118,34 +85,30 @@ export function Pricing() {
   const [yearly, setYearly] = useState(false)
 
   return (
-    <section
-      id="pricing"
-      aria-label="Pricing"
-      className="bg-slate-900 py-20 sm:py-32"
-    >
+    <section id="pricing" aria-label="Pricing" className="bg-slate-900 py-20 sm:py-32">
       <Container>
-      <Switch.Group as="div" className="flex items-center">
-      <Switch
-        checked={yearly}
-        onChange={setYearly}
-        className={clsx(
-          yearly ? 'bg-indigo-600' : 'bg-gray-200',
-          'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2'
-        )}
-      >
-        <span
-          aria-hidden="true"
-          className={clsx(
-            yearly ? 'translate-x-5' : 'translate-x-0',
-            'pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out'
-          )}
-        />
-      </Switch>
-      <Switch.Label as="span" className="ml-3 text-sm">
-        <span className="font-medium text-gray-300">Annual billing</span>{' '}
-        <span className="text-gray-500">(Save 10%)</span>
-      </Switch.Label>
-    </Switch.Group>
+        <Switch.Group as="div" className="flex items-center">
+          <Switch
+            checked={yearly}
+            onChange={setYearly}
+            className={clsx(
+              yearly ? 'bg-indigo-600' : 'bg-gray-200',
+              'relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2',
+            )}
+          >
+            <span
+              aria-hidden="true"
+              className={clsx(
+                yearly ? 'translate-x-5' : 'translate-x-0',
+                'pointer-events-none inline-block size-5 rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out',
+              )}
+            />
+          </Switch>
+          <Switch.Label as="span" className="ml-3 text-sm">
+            <span className="font-medium text-gray-300">Annual billing</span>{' '}
+            <span className="text-gray-500">(Save 10%)</span>
+          </Switch.Label>
+        </Switch.Group>
         <div className="md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
             <span className="relative whitespace-nowrap">
@@ -155,8 +118,7 @@ export function Pricing() {
             for everyone.
           </h2>
           <p className="mt-4 text-lg text-slate-400">
-            It doesn’t matter what size your business is, our software won’t
-            work well for you.
+            It doesn’t matter what size your business is, our software won’t work well for you.
           </p>
         </div>
         <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
@@ -166,11 +128,7 @@ export function Pricing() {
             yearly={yearly}
             description="Good for small businesses and just getting started."
             href="#contact"
-            features={[
-              'Send up to 10 requests per day.',
-              'Connect up to 1 directory.',
-              'Slack integration.',
-            ]}
+            features={['Send up to 10 requests per day.', 'Connect up to 1 directory.', 'Slack integration.']}
           />
           <Plan
             featured
@@ -197,7 +155,7 @@ export function Pricing() {
               'Slack and Teams integration.',
               'SLA support.',
               'Custom authentication.',
-              'Advanced compliance features.'
+              'Advanced compliance features.',
             ]}
           />
         </div>

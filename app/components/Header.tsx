@@ -10,13 +10,7 @@ import { NavLink } from '~/components/NavLink'
 import LogoImg from '~/images/logo.png'
 import { Button } from './Button'
 
-function MobileNavLink({
-  to,
-  children,
-}: {
-  to: string
-  children: React.ReactNode
-}) {
+function MobileNavLink({ to, children }: { to: string; children: React.ReactNode }) {
   return (
     <Popover.Button as={Link} to={to} className="block w-full p-2">
       {children}
@@ -28,25 +22,13 @@ function MobileNavIcon({ open }: { open: boolean }) {
   return (
     <svg
       aria-hidden="true"
-      className="h-3.5 w-3.5 overflow-visible stroke-slate-700"
+      className="size-3.5 overflow-visible stroke-slate-700"
       fill="none"
       strokeWidth={2}
       strokeLinecap="round"
     >
-      <path
-        d="M0 1H14M0 7H14M0 13H14"
-        className={clsx(
-          'origin-center transition',
-          open && 'scale-90 opacity-0',
-        )}
-      />
-      <path
-        d="M2 2L12 12M12 2L2 12"
-        className={clsx(
-          'origin-center transition',
-          !open && 'scale-90 opacity-0',
-        )}
-      />
+      <path d="M0 1H14M0 7H14M0 13H14" className={clsx('origin-center transition', open && 'scale-90 opacity-0')} />
+      <path d="M2 2L12 12M12 2L2 12" className={clsx('origin-center transition', !open && 'scale-90 opacity-0')} />
     </svg>
   )
 }
@@ -55,7 +37,7 @@ function MobileNavigation() {
   return (
     <Popover>
       <Popover.Button
-        className="relative z-10 flex h-8 w-8 items-center justify-center ui-not-focus-visible:outline-none"
+        className="ui-not-focus-visible:outline-none relative z-10 flex size-8 items-center justify-center"
         aria-label="Toggle Navigation"
       >
         {({ open }) => <MobileNavIcon open={open} />}
@@ -83,7 +65,7 @@ function MobileNavigation() {
         >
           <Popover.Panel
             as="div"
-            className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white dark:bg-slate-800 p-4 text-lg tracking-tight text-slate-900 dark:text-gray-300 shadow-xl ring-1 ring-slate-900/5"
+            className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 dark:bg-slate-800 dark:text-gray-300"
           >
             <MobileNavLink to="#features">Features</MobileNavLink>
             {/* <MobileNavLink to="#testimonials">Testimonials</MobileNavLink> */}

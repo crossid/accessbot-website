@@ -1,12 +1,6 @@
-import { Link } from "@remix-run/react"
+import { Link } from '@remix-run/react'
 
-export function NavLink({
-  to,
-  children,
-}: {
-  to: string
-  children: React.ReactNode
-}) {
+export function NavLink({ to, children }: { to: string; children: React.ReactNode }) {
   return (
     <Link
       to={to}
