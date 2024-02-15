@@ -30,7 +30,7 @@ export const StartNow = () => {
                 type="email"
                 autoComplete="email"
                 required
-                className="form-input w-full rounded-md border-2 px-5 py-3 placeholder:text-gray-400 focus:border-gray-200 focus:ring-gray-200 sm:border-none  dark:bg-slate-900 dark:focus:border-indigo-500 dark:focus:ring-indigo-500"
+                className="form-input w-full rounded-md border-2 px-5 py-3 placeholder:text-gray-400 focus:border-gray-200 focus:ring-gray-200 sm:border-none  dark:bg-slate-900 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Your work email"
               />
               {response?.email ? <em className="text-red-600">{response.email}</em> : null}
@@ -38,13 +38,13 @@ export const StartNow = () => {
                 <button
                   disabled={navigation.state !== 'idle'}
                   type="submit"
-                  className="flex w-full items-center justify-center rounded-lg border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-60 lg:py-5 lg:text-2xl"
+                  className="flex w-full items-center justify-center rounded-lg border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-60 lg:py-5 lg:text-2xl"
                 >
                   Submit
                 </button>
               </div>
             </Form>
-            {/* <div className="text-right pr-8 lg:pr-2 lg:pt-2 text-sm text-indigo-600 font-bold">
+            {/* <div className="text-right pr-8 lg:pr-2 lg:pt-2 text-sm text-blue-600 font-bold">
                 <Link to="/contact">
                   <a>Need help? let's talk</a>
                 </Link>
