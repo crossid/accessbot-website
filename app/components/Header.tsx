@@ -7,7 +7,7 @@ import { Fragment } from 'react'
 import { Link } from '@remix-run/react'
 import { Container } from '~/components/Container'
 import { NavLink } from '~/components/NavLink'
-import LogoImg from '~/images/logo.png'
+import LogoImg from '~/images/logo.webp'
 import { Button } from './Button'
 
 function MobileNavLink({ to, children }: { to: string; children: React.ReactNode }) {

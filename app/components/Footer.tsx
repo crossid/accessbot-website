@@ -2,7 +2,7 @@ import { Link } from '@remix-run/react'
 import { Container } from '~/components/Container'
 // import { Logo } from '~/components/Logo'
 import { NavLink } from '~/components/NavLink'
-import LogoImg from '~/images/logo.png'
+import LogoImg from '~/images/logo.webp'
 
 export function Footer() {
   return (
