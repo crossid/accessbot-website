@@ -234,9 +234,13 @@ export function PrimaryFeatures() {
                         {feature.description}
                       </p>
                     </div>
-                    <div className="mt-10 w-[25rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
-                      {idx === selectedIndex && feature.component && <feature.component />}
-                      {idx === selectedIndex && feature.image && (
+                    {idx === selectedIndex && feature.component && (
+                      <div className="mt-10 overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[62rem]">
+                        <feature.component />
+                      </div>
+                    )}
+                    {idx === selectedIndex && feature.image && (
+                      <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
                         <img
                           className="w-full"
                           // className="h-[70vh]"
@@ -244,8 +248,8 @@ export function PrimaryFeatures() {
                           alt=""
                           sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
                         />
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </Tab.Panel>
                 ))}
               </Tab.Panels>
