@@ -5,16 +5,13 @@ import clsx from 'clsx'
 import { useId } from 'react'
 
 import { Container } from '~/components/Container'
-import screenshotAnalytics from '~/images/screenshots/analytics.png'
-import screenshotSurveillance from '~/images/screenshots/surveillance.png'
-import screenshotTemporalAccess from '~/images/screenshots/temporal-access.png'
 
 interface Feature {
   name: React.ReactNode
   summary: string
   description: string
   // image: ImageProps['src']
-  image: string
+  // image: string
   icon: React.ComponentType
 }
 
@@ -24,7 +21,7 @@ const features: Array<Feature> = [
     summary: 'Flexible Temporal Access Control.',
     description:
       "Our chatbot enables precise control over access duration, allowing you to grant permissions for defined time periods. This ensures adherence to the Principle of Least Privilege (PoLP) by automatically revoking access when it's no longer needed, enhancing security and minimizing unnecessary access risks.",
-    image: screenshotTemporalAccess,
+    // image: screenshotTemporalAccess,
     icon: function InventoryIcon() {
       return (
         <>
@@ -40,7 +37,7 @@ const features: Array<Feature> = [
     summary: 'Business Compliance Access Surveillance.',
     description:
       "Our chatbot excels in identifying access requests that do not align with a user’s defined business role. By analyzing each request against role-specific parameters, it flags any inappropriate or unusual access patterns, ensuring that every granted privilege strictly adheres to the individual's job responsibilities and organizational access policies.",
-    image: screenshotSurveillance,
+    // image: screenshotSurveillance,
     icon: function ContactsIcon() {
       return (
         <>
@@ -62,7 +59,7 @@ const features: Array<Feature> = [
     summary: 'Insightful Analytics.',
     description:
       'Gain valuable insights with real-time analytics and reporting features, enabling you to track usage patterns, request trends, and compliance metrics effectively.',
-    image: screenshotAnalytics,
+    // image: screenshotAnalytics,
     icon: function ReportingIcon() {
       const id = useId()
       return (
@@ -122,7 +119,7 @@ function FeaturesMobile() {
           <div className="relative mt-10 pb-10">
             <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6" />
             <div className="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
-              <img className="w-full" src={feature.image} alt="" sizes="52.75rem" />
+              {/* <img className="w-full" src={feature.image} alt="" sizes="52.75rem" /> */}
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
 
 export default function App() {
   return (
-    <html lang="en" className="dark:bg-slate-900">
+    <html lang="en" className="dark:bg-slate-900  dark:text-slate-300">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
