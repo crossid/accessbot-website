@@ -71,6 +71,7 @@ function MobileNavigation() {
             {/* <MobileNavLink to="#testimonials">Testimonials</MobileNavLink> */}
             <MobileNavLink to="#pricing">Pricing</MobileNavLink>
             {/* <MobileNavLink to="/login">Sign in</MobileNavLink> */}
+            <MobileNavLink to="#faq">FAQ</MobileNavLink>
             <hr className="m-2 border-slate-300/40" />
             {/* <MobileNavLink to="/login">Sign in</MobileNavLink> */}
             <MobileNavLink to="#contact">Contact Us</MobileNavLink>
@@ -95,6 +96,7 @@ export function Header() {
               <NavLink to="#features">Features</NavLink>
               {/* <NavLink to="#testimonials">Testimonials</NavLink> */}
               <NavLink to="#pricing">Pricing</NavLink>
+              <NavLink to="#faq">FAQ</NavLink>
               <NavLink to="#contact">Contact</NavLink>
             </div>
           </div>
